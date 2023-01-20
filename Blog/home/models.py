@@ -11,10 +11,10 @@ class BaseModel(models.Model):
     updated_at=models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        abstract=True
+        abstract = True
 
 
-class BlogModel(models.Model):
+class BlogModel(BaseModel):
     user=models.ForeignKey(User,on_delete=models.CASCADE,related_name='blogmodel')
     title=models.CharField(max_length=500)
     blog_text=models.TextField()
